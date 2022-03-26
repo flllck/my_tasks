@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    render json: { message: :ok }
+    @projects = Project.all
+    json_response(@projects, :ok, :todos)
   end
 end
